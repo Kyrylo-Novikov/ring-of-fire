@@ -1,0 +1,17 @@
+<section class="field">
+  <div class="card-stack">
+    @for (card of [0,1,2,3]; track $index; let i = $index) {
+    <img
+      [ngStyle]="{ right: i * 5 + 'px' }"
+      src="/assets/img/card-spezial/card_cover.png"
+      alt=""
+    />}
+    <img
+      (click)="takeCard()"
+      [class.pick-card]="pickCardAnimation"
+      class="upper-card-cover"
+      src="/assets/img/card-spezial/card_cover.png"
+      alt=""
+    />
+  </div>
+</section>

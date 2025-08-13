@@ -1,0 +1,31 @@
+.field {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  background-image: url("/assets/img/start-screen/background.png");
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-stack {
+  position: relative;
+  img {
+    position: absolute;
+    width: 120px;
+  }
+  .upper-card-cover {
+    right: 20px;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    &:hover {
+      transform: scale(1.1) translateY(-16px);
+    }
+  }
+}
+
+.pick-card {
+  transition: 0.15s ease-in-out;
+  transform: scale(1.5) !important;
+}
