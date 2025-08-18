@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class Player {
   @Input() name: string = 'Gast';
+  @Input() playerActive: boolean = false;
 }
