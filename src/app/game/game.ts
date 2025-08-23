@@ -40,7 +40,6 @@ export class Game implements OnInit {
   takeCard() {
     if (!this.pickCardAnimation) {
       this.currentCard = this.currentGame.stack.pop() || '';
-      // this.currentCard = this.currentGame.currentPlayer + 1
       this.pickCardAnimation = true;
       setTimeout(() => {
         this.currentGame.playedCards.push(this.currentCard);
@@ -48,6 +47,9 @@ export class Game implements OnInit {
           this.pickCardAnimation = false;
         }, 10);
       }, 1000);
+      this.currentGame.currentPlayer++;
+      this.currentGame.currentPlayer =
+        this.currentGame.currentPlayer % this.currentGame.players.length;
     }
   }
 
@@ -55,7 +57,7 @@ export class Game implements OnInit {
     const dialogRef = this.dialog.open(DialogAddPlayer);
 
     dialogRef.afterClosed().subscribe((name: string) => {
-      if (name !== undefined) {
+      if (name && name.trim().length > 0) {
         this.currentGame.players.push(name);
       }
     });

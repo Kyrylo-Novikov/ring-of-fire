@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  inject,
   Component,
   model,
   signal,
@@ -31,12 +32,16 @@ import { MatInputModule } from '@angular/material/input';
     // MatDialogRef,
     MatDialogTitle,
     FormsModule,
+    MatButtonModule,
   ],
   templateUrl: './dialog-add-player.html',
   styleUrl: './dialog-add-player.scss',
 })
 export class DialogAddPlayer {
   name: string = '';
-
-  onNoClick() {}
+  readonly dialog = inject(MatDialog);
+  readonly dialogRef = inject(MatDialogRef<DialogAddPlayer>);
+  onNoClick() {
+    this.dialogRef.close();
+  }
 }

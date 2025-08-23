@@ -8,5 +8,12 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button matButton (click)="onNoClick()">No Thanks</button>
-  <button matButton [mat-dialog-close]="name" cdkFocusInitial>Ok</button>
+  <button
+    matButton
+    [disabled]="name.trim().length == 0"
+    [mat-dialog-close]="name"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
 </mat-dialog-actions>
