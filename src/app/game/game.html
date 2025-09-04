@@ -12,19 +12,19 @@
     @for (card of [0,1,2,3]; track $index; let i = $index) {
     <img
       [ngStyle]="{ right: i * 5 + 'px' }"
-      src="/assets/img/card-spezial/card_cover.png"
+      src="assets/img/card-spezial/card_cover.png"
       alt=""
     />}
     <img
       (click)="takeCard()"
       class="upper-card-cover"
-      src="/assets/img/card-spezial/card_cover.png"
+      src="assets/img/card-spezial/card_cover.png"
       alt=""
     />
     <!--  Stack for played cards -->
     @for (playedCard of currentGame.playedCards;track $index; let i = $index) {
     <img
-      src="/assets/img/card-front/{{ playedCard }}.png"
+      src="assets/img/card-front/{{ playedCard }}.png"
       alt=""
       class="played-card"
     />}
@@ -33,7 +33,7 @@
     <img
       (click)="takeCard()"
       class="pick-card"
-      src="/assets/img/card-front/{{ currentCard }}.png"
+      src="assets/img/card-front/{{ currentCard }}.png"
       alt=""
     />}
   </div>
